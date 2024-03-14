@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:golpokotha/app/data/colors.dart';
+import 'package:golpokotha/app/routes/app_pages.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -82,19 +83,24 @@ class _OnboardingViewState extends State<OnboardingView> {
                         ),
                       ),
                       const SizedBox(height: 22),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: primaryColor),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 10),
-                          child: Text(
-                            "Get Started",
-                            style: TextStyle(
-                              color: darkBlack,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(AppPages.HOME);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: primaryColor),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                            child: Text(
+                              "Get Started",
+                              style: TextStyle(
+                                color: darkBlack,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
