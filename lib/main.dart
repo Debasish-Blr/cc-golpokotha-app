@@ -19,7 +19,7 @@ class GolpoKotha extends StatelessWidget {
     return GetMaterialApp(
       title: "GolpoKotha",
       debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.ONBOARDING,
+      initialRoute: AppPages.HOME,
       theme: themeData,
       getPages: AppPages.routes,
     );
