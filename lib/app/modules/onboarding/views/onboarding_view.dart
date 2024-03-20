@@ -1,8 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:golpokotha/app/data/colors.dart';
 import 'package:golpokotha/app/routes/app_pages.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -16,101 +19,80 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, constrints) {
-      double w = constrints.maxWidth;
-      double h = constrints.maxHeight;
+      // double w = constrints.maxWidth;
+      // double h = constrints.maxHeight;
       return Scaffold(
         backgroundColor: darkBlack,
-        body: SizedBox(
-          height: h,
-          width: w,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 48),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: PageView.builder(
-                    onPageChanged: (value) {
-                      setState(() {
-                        currentIndex = value;
-                      });
-                    },
-                    itemCount: 3,
-                    itemBuilder: (context, index) {
-                      return Image.asset(
-                        "assets/images/onboarding-1.png",
-                        color: Colors.white,
-                      );
-                    },
-                  ),
-                ),
-                // const SizedBox(height: 16),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Listen Your Favorite Books',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: primaryColor,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        "We have put together all the books so that you can find and enjoy all the book"
-                                .capitalizeFirst ??
-                            "",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: secondaryColor,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 22),
-                      DotsIndicator(
-                        dotsCount: 3,
-                        position: currentIndex,
-                        decorator: DotsDecorator(
-                          size: const Size.square(9.0),
-                          activeSize: const Size(18.0, 9.0),
-                          activeShape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                      const SizedBox(height: 22),
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed(AppPages.HOME);
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: primaryColor),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 10),
-                            child: Text(
-                              "Get Started",
-                              style: TextStyle(
-                                color: darkBlack,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+        body: Stack(
+          children: [
+            Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.center,
+                colors: [
+                  Colors.transparent,
+                  Color(0xFF121212),
+                ],
+              ),
             ),
           ),
+            Image.asset(
+              'assets/images/generate_an_image_with_the_following_characteris 1.png',
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
+            // const SizedBox(height: 16),
+            Center(
+              child: Image.asset('assets/images/MicrosoftTeams-image (10).png'),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 16,horizontal: 16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Voice of Bengal',
+                    style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: GoogleFonts.roboto().fontFamily,
+                        letterSpacing: 0.1,
+                        color: primaryColor),
+                  ),
+                   SizedBox(height: 16,),
+                  Text(
+                    'Welcome to the rich, compelling and brant world of Bengali literature presented in audio.',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.roboto().fontFamily,
+                        letterSpacing: 0.1,
+                        color: tertiaryText),
+                  ),
+                  SizedBox(height: 48,),
+                  InkWell(
+                    onTap: (){
+                      Get.toNamed(AppPages.LOGINPAGE);
+                    },
+                    child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: loginButtonColor,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Center(
+                            child: Text(
+                          'Get Started',
+                          style: TextStyle(color: primaryColor, fontSize: 16),
+                        ))),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       );
     });
