@@ -11,24 +11,23 @@ class AddSection extends StatefulWidget {
 class _AddSectionState extends State<AddSection> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 32),
+    return Container(
+      color: darkBlack,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Stack(alignment: Alignment.topRight, children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            height: 130,
-            width: 400,
-            // margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-            decoration: BoxDecoration(
-                border: Border.all(width: 2, color: addBorderColor),
-                borderRadius: const BorderRadius.all(Radius.circular(10))),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: Image.asset(
-                  'assets/create_a_generic_ad_banner_selling_hot_pancakes_ 1.jpg',
-                  fit: BoxFit.cover,),
-            ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          height: 130,
+          width: double.infinity,
+          // margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2, color: addBorderColor),
+              borderRadius: const BorderRadius.all(Radius.circular(10))),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(5),
+            child: Image.asset(
+                'assets/create_a_generic_ad_banner_selling_hot_pancakes_ 1.jpg',
+                fit: BoxFit.cover,),
           ),
         ),
         Container(

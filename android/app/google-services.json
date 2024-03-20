@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "140867775647",
+    "project_id": "cc-cms-6b752",
+    "storage_bucket": "cc-cms-6b752.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140867775647:android:fb0405a02ee9ce217a46aa",
+        "android_client_info": {
+          "package_name": "com.example.golpokotha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140867775647-82teqtrmqpvnaku56vh0804vd93cp9ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlt2WPDB4owPoHutjOHyHfGfaFc9csHSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140867775647-82teqtrmqpvnaku56vh0804vd93cp9ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

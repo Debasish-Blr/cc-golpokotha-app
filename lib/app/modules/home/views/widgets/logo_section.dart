@@ -7,25 +7,25 @@ class TopLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 190,
+      // width: 190,
+      height: 120,
       decoration: const BoxDecoration(
+        // borderRadius: BorderRadius.circular(550),
         gradient: RadialGradient(
+          center: Alignment.center,
+          radius: 2.6,
+          // focalRadius: 4,
           colors: [
-            Color.fromARGB(255, 8, 50, 85),
-            darkBlack,
-
-            //  darkBlack
+            Color.fromRGBO(4, 94, 185, 0.23),
+            Color.fromARGB(0, 109, 137, 164),
           ],
-          radius: 0.76,
-          // focal: Alignment(0.7, -0.7),
-          tileMode: TileMode.clamp,
-          // tileMode: TileMode.mirror,
+          stops: [0.0, 0.7],
         ),
       ),
-      padding: const EdgeInsets.only(left: 10,  top: 16, bottom: 30),
+      // padding: const EdgeInsets.only(left: 10, top: 16, bottom: 16),
       child: Image.asset(
-        'assets/images/MicrosoftTeams-image (10).png',
-        // width: 100,
+        'assets/images/MicrosoftTeams-image (11).png',
+        // width: 164
         // color: Colors.transparent,
         // fit: BoxFit.,
       ),
